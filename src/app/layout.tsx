@@ -3,10 +3,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { profile } from "@/data/profile";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+// 한글까지 고르게 둥근 산세리프. 패키지의 가변 폰트를 직접 호스팅합니다.
+const pretendard = localFont({
+  src: "../../node_modules/pretendard/dist/web/variable/woff2/PretendardVariable.woff2",
+  variable: "--font-pretendard",
+  weight: "45 920",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +35,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${geistSans.variable} bg-gray-50 font-sans text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100`}
+        className={`${pretendard.variable} min-h-screen bg-gradient-to-b from-[#FFF9F0] via-[#FFF1E4] to-[#FFDCC7] bg-fixed font-sans text-stone-800 antialiased dark:from-[#1A1512] dark:via-[#211915] dark:to-[#2E1F18] dark:text-stone-100`}
       >
         {children}
       </body>
